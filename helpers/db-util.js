@@ -1,7 +1,3 @@
-// Zd8AKgufSy9j3EU9
-
-// jasonDevJobsApp
-
 import {MongoClient} from "mongodb";
 
 export async function connectDatabase() {
