@@ -6,7 +6,8 @@ import styled from "@emotion/styled";
 const JobList = (props) => {
   const allJobs = props.jobs;
   const [viewableJobs, setViewableJobs] = useState(() => allJobs);
-  const [numJobsViewable, setNumJobsViewable] = useState(6);
+  // const [numJobsViewable, setNumJobsViewable] = useState(6);
+  console.log("viewable", viewableJobs);
   return (
     <JobListWrapper>
       <SearchForm setJobs={setViewableJobs} allJobs={allJobs} />
@@ -16,15 +17,13 @@ const JobList = (props) => {
         ) : (
           viewableJobs.map((job, idx) => (
             <JobItem
-              key={job.id.toString()}
-              id={job.id.toString()}
-              isViewable={idx < numJobsViewable}
+              key={job._id.toString()}
+              id={job._id.toString()}
               {...job}
             />
           ))
         )}
       </JobsWrapper>
-      <button>hello</button>
     </JobListWrapper>
   );
 };
