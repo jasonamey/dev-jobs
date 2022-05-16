@@ -34,7 +34,7 @@ const JobsWrapper = styled.section`
   justify-content: space-between;
   grid-row-gap: 60px;
   grid-template-columns: 300px 300px 300px;
-  margin-block-start: 106px;
+  margin-top: 50px;
 `;
 
 const JobListWrapper = styled.div`

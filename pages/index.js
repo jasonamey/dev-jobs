@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 import PageContainer from "../components/ui/PageContainer";
 import JobList from "../components/JobList";
 import {getJobs} from "../lib/mongodb";
-// import {dummyJobs} from "../helpers/dumb-data";
 export default function Home(props) {
   const {jobs} = props;
   return (
@@ -20,7 +19,6 @@ export async function getStaticProps() {
   return {
     props: {
       jobs: JSON.stringify(jobs),
-      // jobs: JSON.stringify(dummyJobs),
     },
   };
 }

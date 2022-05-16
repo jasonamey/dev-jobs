@@ -16,7 +16,7 @@ const JobItem = ({
 }) => {
   return (
     <JobItemWrapper isViewable={true}>
-      <div className="icon-container" style={{backgroundColor: logoBackground}}>
+      <div className="logo-container" style={{backgroundColor: logoBackground}}>
         <div
           className="image-container"
           style={{backgroundColor: logoBackground}}
@@ -48,11 +48,11 @@ export default JobItem;
 const JobItemWrapper = styled.article`
   background-color: var(--color-bg-primary);
   position: relative;
-  padding-inline: 36px;
+  padding: 0 36px;
   border-radius: 6px;
-  padding-block-end: 40px;
+  padding-bottom: 40px;
   display: ${(props) => (props.isViewable ? "block" : "none")};
-  .icon-container {
+  .logo-container {
     position: absolute;
     transform: translate(0, -50%);
     display: flex;
@@ -73,7 +73,7 @@ const JobItemWrapper = styled.article`
     }
   }
   .info-container {
-    margin-block-start: 50px;
+    margin-top: 50px;
     h2 {
       cursor: pointer;
       color: var(--color-job-title);
@@ -85,13 +85,13 @@ const JobItemWrapper = styled.article`
       color: var(--color-text-secondary);
     }
     .row-1-h3 {
-      margin-block-end: 20px;
+      margin-bottom: 20px;
     }
     .row-2-h2 {
-      margin-block-end: 20px;
+      margin-bottom: 20px;
     }
     .row-3-h3 {
-      margin-block-end: 50px;
+      margin-bottom: 50px;
     }
     .row-4-h4 {
       color: var(--color-accent-primary);

@@ -131,10 +131,12 @@ table {
 :root {
   --color-accent-primary: #5964e0;
   --color-accent-secondary: #959bf4;
-  --desktop-width: 1116px;
+  --color-accent-tertiary: #eeeffc;
+  --desktop-width: 90%;
   --test-color: green;
   --card-padding: 36px;
   --card-border-radius: 6px;
+  --button-width: 126px;
 }
 
 * {

@@ -16,9 +16,8 @@ const PageContainerWrapper = styled.main`
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: (--desktop-width);
   background-color: var(--color-bg-secondary);
-  padding-block-end: 70px;
+  padding-bottom: 70px;
 `;
 
 export default PageContainer;
