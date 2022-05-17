@@ -38,5 +38,3 @@ export async function getStaticProps(context) {
     },
   };
 }
-
-// 627ae83c41ca3a474c68f602
