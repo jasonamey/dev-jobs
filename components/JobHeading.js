@@ -2,7 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import Image from "next/image";
 import Link from "next/link";
-const JobHeading = ({logo, logoBackground, company}) => {
+const JobHeading = ({logo, logoBackground, company, id}) => {
   return (
     <JobHeadingWrapper>
       <div className="logo-container" style={{backgroundColor: logoBackground}}>
@@ -23,7 +23,7 @@ const JobHeading = ({logo, logoBackground, company}) => {
           <h2>{company}</h2>
           <h4>{`${company.toLowerCase()}.com`}</h4>
         </div>
-        <Link href="/">
+        <Link href={`/company/${id}`}>
           <button>Company Site</button>
         </Link>
       </div>
@@ -73,6 +73,11 @@ const JobHeadingWrapper = styled.header`
       font-size: 15px;
       font-family: inherit;
       border-radius: 4px;
+      transition: 0.5s;
+      &:hover {
+        background-color: var(--color-accent-primary);
+        color: #fff;
+      }
     }
   }
 `;

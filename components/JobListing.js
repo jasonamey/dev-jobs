@@ -1,9 +1,9 @@
 import React from "react";
 import JobHeading from "./JobHeading";
+import Link from "next/link";
 import styled from "@emotion/styled";
 
 const JobListing = ({job}) => {
-  console.log(JSON.parse(job));
   const {
     company,
     contract,
@@ -16,6 +16,7 @@ const JobListing = ({job}) => {
     role: {content: roleContent, items: roleItems},
     requirements: {content: reqContent, items: reqItems},
     role,
+    _id: id,
   } = JSON.parse(job)[0];
   return (
     <JobListingWrapper>
@@ -23,6 +24,7 @@ const JobListing = ({job}) => {
         logo={logo}
         logoBackground={logoBackground}
         company={company}
+        id={id}
       />
       <JobListingDetail counter={0}>
         <div className="top-container">
@@ -35,7 +37,9 @@ const JobListing = ({job}) => {
             <h1>{position}</h1>
             <h4>{location}</h4>
           </div>
-          <button>Apply Now</button>
+          <Link href={`/company/${id}`}>
+            <button>Apply Now</button>
+          </Link>
         </div>
         <div className="bottom-container">
           <p>{description}</p>
@@ -100,6 +104,10 @@ const JobListingDetail = styled.article`
       font-size: 15px;
       font-family: inherit;
       border-radius: 4px;
+      transition: 0.5s;
+      &:hover {
+        background-color: var(--color-accent-secondary);
+      }
     }
   }
   .bottom-container {

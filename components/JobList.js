@@ -6,8 +6,8 @@ import styled from "@emotion/styled";
 const JobList = (props) => {
   const allJobs = props.jobs;
   const [viewableJobs, setViewableJobs] = useState(() => allJobs);
-  // const [numJobsViewable, setNumJobsViewable] = useState(6);
-  console.log("viewable", viewableJobs);
+  const [numJobsViewable, setNumJobsViewable] = useState(6);
+
   return (
     <JobListWrapper>
       <SearchForm setJobs={setViewableJobs} allJobs={allJobs} />
@@ -24,6 +24,7 @@ const JobList = (props) => {
           ))
         )}
       </JobsWrapper>
+      <button>View</button>
     </JobListWrapper>
   );
 };

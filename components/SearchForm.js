@@ -113,7 +113,7 @@ const FieldWrapper = styled.div`
     border: none;
     outline: none;
     background-color: var(--color-bg-primary);
-    color: var(--color-text-primary);
+    color: var(--color-text-input);
     &.text-input {
       flex: 1;
       &::placeholder {
@@ -157,9 +157,13 @@ const FieldWrapper = styled.div`
         display: none;
       }
     }
+    input:hover ~ .checkmark {
+      background-color: var(--color-accent-secondary);
+    }
     input:checked ~ .checkmark {
       background-color: var(--color-accent-primary);
     }
+
     input:checked ~ .checkmark:after {
       display: block;
     }
@@ -192,6 +196,10 @@ const FieldWrapper = styled.div`
     font-size: 16px;
     padding: 13px 38px;
     border-radius: var(--card-border-radius);
+    cursor: pointer;
+    &:hover {
+      background-color: var(--color-accent-secondary);
+    }
   }
 `;
 
