@@ -36,7 +36,7 @@ const JobHeadingWrapper = styled.header`
   --padding-header-inline: 50px;
   background-color: var(--color-bg-primary);
   margin-bottom: 30px;
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   overflow: hidden;
   display: flex;
   .logo-container {
@@ -72,8 +72,8 @@ const JobHeadingWrapper = styled.header`
       font-weight: 600;
       font-size: 15px;
       font-family: inherit;
-      border-radius: 4px;
-      transition: 0.5s;
+      border-radius: var(--border-radius);
+      transition: var(--transition);
       &:hover {
         background-color: var(--color-accent-primary);
         color: #fff;

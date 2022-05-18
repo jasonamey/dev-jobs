@@ -19,5 +19,4 @@ const PageContainerWrapper = styled.main`
   background-color: var(--color-bg-secondary);
   padding-bottom: 70px;
 `;
-
 export default PageContainer;

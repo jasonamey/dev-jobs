@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import Image from "next/image";
 import styled from "@emotion/styled";
 import searchIcon from "../public/icon-search.svg";
@@ -7,6 +7,7 @@ import {
   searchArrayOfObjectsForTextInValue,
   searchArrayForValueOfKey,
 } from "../helpers/utilities";
+import {ButtonBase, PrimaryButtonColors} from "../styles/mixins";
 
 const SearchForm = ({setJobs, allJobs}) => {
   const [textSearch, setTextSearch] = useState("");
@@ -79,7 +80,9 @@ const SearchForm = ({setJobs, allJobs}) => {
             <span className="checkmark"></span>
             Full Time Only
           </label>
-          <button type="submit">Search</button>
+          <button type="submit" css={[ButtonBase, PrimaryButtonColors]}>
+            Search
+          </button>
         </FieldWrapper>
       </form>
     </FormWrapper>
@@ -148,7 +151,7 @@ const FieldWrapper = styled.div`
       left: 0;
       height: 24px;
       width: 24px;
-      border-radius: 4px;
+      border-radius: var(--border-radius);
       background-color: var(--color-text-primary);
 
       &:after {
@@ -186,20 +189,6 @@ const FieldWrapper = styled.div`
     height: 24px;
     width: 30px;
     margin: 0 14px 0 6px;
-  }
-  button {
-    border: none;
-    background-color: var(--color-accent-primary);
-    color: #fff;
-    font-family: inherit;
-    font-weight: 600;
-    font-size: 16px;
-    padding: 13px 38px;
-    border-radius: var(--card-border-radius);
-    cursor: pointer;
-    &:hover {
-      background-color: var(--color-accent-secondary);
-    }
   }
 `;
 

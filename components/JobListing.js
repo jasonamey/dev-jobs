@@ -2,6 +2,7 @@ import React from "react";
 import JobHeading from "./JobHeading";
 import Link from "next/link";
 import styled from "@emotion/styled";
+import {ButtonBase, PrimaryButtonColors} from "../styles/mixins";
 
 const JobListing = ({job}) => {
   const {
@@ -26,7 +27,7 @@ const JobListing = ({job}) => {
         company={company}
         id={id}
       />
-      <JobListingDetail counter={0}>
+      <JobListingDetail>
         <div className="top-container">
           <div className="job-title-container">
             <span className="job-title-heading">
@@ -38,7 +39,7 @@ const JobListing = ({job}) => {
             <h4>{location}</h4>
           </div>
           <Link href={`/company/${id}`}>
-            <button>Apply Now</button>
+            <button css={[ButtonBase, PrimaryButtonColors]}>Apply Now</button>
           </Link>
         </div>
         <div className="bottom-container">
@@ -74,7 +75,7 @@ const JobListingDetail = styled.article`
   padding: 50px;
   width: 100%;
   background-color: var(--color-bg-primary);
-  border-radius: 4px;
+  border-radius: var(--border-radius);
   .top-container {
     display: flex;
     justify-content: space-between;
@@ -91,22 +92,6 @@ const JobListingDetail = styled.article`
         font-weight: 600;
         color: var(--color-accent-primary);
         font-size: 14px;
-      }
-    }
-    button {
-      border: none;
-      cursor: pointer;
-      background-color: var(--color-accent-primary);
-      padding: 14px 0;
-      width: 146px;
-      color: #fff;
-      font-weight: 600;
-      font-size: 15px;
-      font-family: inherit;
-      border-radius: 4px;
-      transition: 0.5s;
-      &:hover {
-        background-color: var(--color-accent-secondary);
       }
     }
   }

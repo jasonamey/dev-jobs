@@ -49,7 +49,7 @@ const JobItemWrapper = styled.article`
   background-color: var(--color-bg-primary);
   position: relative;
   padding: 0 36px;
-  border-radius: 6px;
+  border-radius: var(--border-radius);
   padding-bottom: 40px;
   display: ${(props) => (props.isViewable ? "block" : "none")};
   .logo-container {

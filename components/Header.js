@@ -25,6 +25,7 @@ const HeaderWrapper = styled.header`
   height: 160px;
   background-image: url("/bg-pattern-header.svg");
   background-color: var(--color-bg-secondary);
+  background-size: cover;
   padding-top: 42px;
   display: flex;
   justify-content: center;

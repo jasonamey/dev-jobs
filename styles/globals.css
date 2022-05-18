@@ -135,8 +135,9 @@ table {
   --desktop-width: 90%;
   --test-color: green;
   --card-padding: 36px;
-  --card-border-radius: 6px;
+  --border-radius: 6px;
   --button-width: 126px;
+  --transition: 0.5s;
 }
 
 * {
