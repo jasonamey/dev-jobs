@@ -8,12 +8,17 @@ const JobList = (props) => {
   const allJobs = props.jobs;
   const [viewableJobs, setViewableJobs] = useState(() => allJobs);
   const [numJobsViewable, setNumJobsViewable] = useState(6);
+
   const clickHandler = () => {
     setNumJobsViewable((prev) => prev + 6);
   };
   return (
     <JobListWrapper>
-      <SearchForm setJobs={setViewableJobs} allJobs={allJobs} />
+      <SearchForm
+        setJobs={setViewableJobs}
+        allJobs={allJobs}
+        numOfTotalJobs={allJobs.length}
+      />
       <JobsWrapper>
         {viewableJobs.length === 0 ? (
           <p>No jobs fit that criteria!</p>
@@ -22,14 +27,23 @@ const JobList = (props) => {
             <JobItem
               key={job._id.toString()}
               id={job._id.toString()}
+              isViewable={idx < numJobsViewable}
               {...job}
             />
           ))
         )}
       </JobsWrapper>
-      <div className="button-container">
-        <button css={[ButtonBase, PrimaryButtonColors]}>View</button>
-      </div>
+      {viewableJobs.length === allJobs.length &&
+        numJobsViewable < allJobs.length && (
+          <div className="button-container">
+            <button
+              css={[ButtonBase, PrimaryButtonColors]}
+              onClick={clickHandler}
+            >
+              View
+            </button>
+          </div>
+        )}
     </JobListWrapper>
   );
 };

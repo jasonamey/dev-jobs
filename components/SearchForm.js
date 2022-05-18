@@ -9,11 +9,12 @@ import {
 } from "../helpers/utilities";
 import {ButtonBase, PrimaryButtonColors} from "../styles/mixins";
 
-const SearchForm = ({setJobs, allJobs}) => {
+const SearchForm = ({setJobs, allJobs, numOfTotalJobs}) => {
   const [textSearch, setTextSearch] = useState("");
   const [jobLocation, setJobLocation] = useState("");
   const [isFullTimeOnly, setIsFullTimeOnly] = useState(false);
   const [viewableJobs, setViewableJobs] = useState(allJobs);
+  const [jobsFoundBySearch, setJobsFoundBySearch] = useState(numOfTotalJobs);
 
   const submitHandler = (e) => {
     e.preventDefault();
@@ -28,6 +29,7 @@ const SearchForm = ({setJobs, allJobs}) => {
       curArr = searchArrayForValueOfKey(curArr, "Full Time", "contract");
     }
     setJobs((prev) => curArr);
+    setJobsFoundBySearch(curArr.length);
     setTextSearch("");
     setJobLocation("");
     setIsFullTimeOnly(false);
@@ -81,7 +83,7 @@ const SearchForm = ({setJobs, allJobs}) => {
             Full Time Only
           </label>
           <button type="submit" css={[ButtonBase, PrimaryButtonColors]}>
-            Search
+            {jobsFoundBySearch === numOfTotalJobs ? "Search" : "Reset"}
           </button>
         </FieldWrapper>
       </form>

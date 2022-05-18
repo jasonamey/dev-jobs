@@ -15,7 +15,7 @@ const JobItem = ({
   isViewable,
 }) => {
   return (
-    <JobItemWrapper isViewable={true}>
+    <JobItemWrapper isViewable={isViewable}>
       <div className="logo-container" style={{backgroundColor: logoBackground}}>
         <div
           className="image-container"
