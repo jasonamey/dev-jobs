@@ -6,6 +6,7 @@ export default function Company({companyName}) {
   const companyContent = companyName
     .split(" ")
     .map((item, i) => <p key={i}>{item.toUpperCase()}</p>);
+
   return (
     <DummyPageContainer>
       {companyContent}

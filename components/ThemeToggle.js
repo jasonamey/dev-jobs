@@ -83,8 +83,6 @@ const ToggleThumb = styled.span`
   left: var(--toggle-padding);
   width: var(--thumb-width);
   height: var(--thumb-width);
-  // width: calc(var(--toggle-height) - (var(--toggle-padding) * 2));
-  // height: calc(var(--toggle-height) - (var(--toggle-padding) * 2));
   border-radius: 50%;
   background: var(--color-accent-primary);
   transition: transform 0.25s ease-in-out;

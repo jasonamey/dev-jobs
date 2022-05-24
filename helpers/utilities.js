@@ -1,14 +1,14 @@
 export function searchArrayOfObjectsForTextInValue(arr, value) {
-  let str = String(value).toLowerCase();
-  return arr.filter((o) =>
-    Object.entries(o).some((item) => {
-      return String(item[1]).toLowerCase().indexOf(str) !== -1;
+  const strValue = String(value).toLowerCase();
+  return arr.filter((obj) =>
+    Object.entries(obj).some((item) => {
+      return String(item[1]).toLowerCase().indexOf(strValue) !== -1;
     })
   );
 }
 export function searchArrayForValueOfKey(arr, value, key) {
-  value = String(value).toLowerCase();
+  const strValue = String(value).toLowerCase();
   return arr.filter((item) => {
-    return String(item[key]).toLowerCase().indexOf(value) !== -1;
+    return String(item[key]).toLowerCase().indexOf(strValue) !== -1;
   });
 }

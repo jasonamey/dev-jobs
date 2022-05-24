@@ -2,7 +2,11 @@ import React from "react";
 import styled from "@emotion/styled";
 
 const DummyPageContainer = ({children}) => {
-  return <DummyPageContainerWrapper>{children}</DummyPageContainerWrapper>;
+  return (
+    <>
+      <DummyPageContainerWrapper>{children}</DummyPageContainerWrapper>
+    </>
+  );
 };
 
 const DummyPageContainerWrapper = styled.main`

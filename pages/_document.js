@@ -23,6 +23,8 @@ export default function Document() {
       </Head>
       <body>
         <script dangerouslySetInnerHTML={{__html: themeInitializerScript}} />
+        <div id="backdrop-root"></div>
+        <div id="overlay-root"></div>
         <Main />
         <NextScript />
       </body>
