@@ -4,8 +4,7 @@ import {device} from "./devices";
 export const ButtonBase = css`
   border: none;
   cursor: pointer;
-  padding: 14px 0;
-  width: 146px;
+  padding: 14px;
   font-weight: 600;
   font-size: 15px;
   font-family: inherit;
@@ -38,11 +37,12 @@ export const FieldWrapperStyle = css`
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  &:last-child {
-    border: none;
+  padding: 28px 0;
+  &:nth-child(2) {
+    backround: green;
   }
   @media screen and ${device.tablet} {
-    padding: 15px;
+    padding: 28px 15px;
     border-right: 1px solid var(--color-text-primary);
   }
 `;
@@ -52,11 +52,9 @@ export const InputStyle = css`
   border: none;
   outline: none;
   background-color: var(--color-bg-primary);
-
   color: var(--color-text-input);
   &.text-input {
     flex: 1;
-
     &::placeholder {
       color: var(--color-text-primary);
     }

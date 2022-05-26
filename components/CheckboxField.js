@@ -7,7 +7,7 @@ import {device} from "../styles/devices";
 
 const CheckboxField = ({id, checkedValue, setCheckedValue, textLabel}) => {
   return (
-    <div css={FieldWrapperStyle}>
+    <div css={FieldWrapperStyle} style={{border: "none"}}>
       <CheckBoxWrapper>
         <label className="checkbox-container" htmlFor={id}>
           <input
@@ -19,12 +19,6 @@ const CheckboxField = ({id, checkedValue, setCheckedValue, textLabel}) => {
           <span className="checkmark"></span>
           {textLabel}
         </label>
-        <button type="submit" css={[PrimaryButtonColors]}>
-          <span className="search-btn-txt">Search</span>
-          <span className="search-btn-icon">
-            <Image src={searchIcon} alt="search-icon" height={20} width={20} />
-          </span>
-        </button>
       </CheckBoxWrapper>
     </div>
   );
@@ -34,12 +28,26 @@ const CheckboxField = ({id, checkedValue, setCheckedValue, textLabel}) => {
   /* {jobsFoundBySearch === numOfTotalJobs ? "Search" : "Reset"} */
 }
 
+{
+  /* <button
+type="submit"
+css={[PrimaryButtonColors]}
+onClick={() => console.log("hello submit")}
+>
+<span className="search-btn-txt">Search</span>
+<span className="search-btn-icon">
+  <Image src={searchIcon} alt="search-icon" height={20} width={20} />
+</span>
+</button> */
+}
+
 const CheckBoxWrapper = styled.div`
   flex: 1;
   display: flex;
   width: 100%;
   justify-content: space-between;
   align-items: center;
+
   .checkbox-container {
     margin-left: 10px;
     display: flex;

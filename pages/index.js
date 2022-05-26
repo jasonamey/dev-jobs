@@ -1,11 +1,11 @@
 import * as React from "react";
-import styled from "@emotion/styled";
 import PageContainer from "../components/ui/PageContainer";
 import JobList from "../components/JobList";
 import {getJobs} from "../lib/mongodb";
 
 export default function Home(props) {
   const {jobs} = props;
+
   return (
     <>
       <PageContainer>
@@ -14,8 +14,6 @@ export default function Home(props) {
     </>
   );
 }
-
-const Container = styled.div``;
 
 export async function getStaticProps() {
   const jobs = await getJobs();

@@ -9,6 +9,7 @@ const TextInputField = ({
   altText,
   textTerm,
   setText,
+  addStyle,
 }) => {
   return (
     <div css={FieldWrapperStyle}>

@@ -1,6 +1,7 @@
 import React from "react";
 import JobHeading from "./JobHeading";
 import Link from "next/link";
+import Button from "./ui/Button";
 import styled from "@emotion/styled";
 import {ButtonBase, PrimaryButtonColors} from "../styles/mixins";
 
@@ -20,55 +21,66 @@ const JobListing = ({job}) => {
     _id: id,
   } = JSON.parse(job)[0];
   return (
-    <JobListingWrapper>
-      <JobHeading
-        logo={logo}
-        logoBackground={logoBackground}
-        company={company}
-        id={id}
-      />
-      <JobListingDetail>
-        <div className="top-container">
-          <div className="job-title-container">
-            <span className="job-title-heading">
-              {postedAt}
-              <span className="dot">&middot;</span>
-              {contract}
-            </span>
-            <h1>{position}</h1>
-            <h4>{location}</h4>
+    <>
+      <JobListingWrapper>
+        <JobHeading
+          logo={logo}
+          logoBackground={logoBackground}
+          company={company}
+          id={id}
+        />
+        <JobListingDetail>
+          <div className="top-container">
+            <div className="job-title-container">
+              <span className="job-title-heading">
+                {postedAt}
+                <span className="dot">&middot;</span>
+                {contract}
+              </span>
+              <h1>{position}</h1>
+              <h4>{location}</h4>
+            </div>
+            <Link href={`/company/${id}`}>
+              <button css={[ButtonBase, PrimaryButtonColors]}>Apply Now</button>
+            </Link>
           </div>
+          <div className="bottom-container">
+            <p>{description}</p>
+            <h2>Requirements</h2>
+            <p>{reqContent}</p>
+            <ul>
+              {reqItems.map((item, i) => (
+                <li key={i}>{item}</li>
+              ))}
+            </ul>
+            <h2>What Will You Do</h2>
+            <p>{roleContent}</p>
+            <ol>
+              {roleItems.map((item, i) => (
+                <JobListingOrderedItemWrapper key={i} idx={i + 1}>
+                  {item}
+                </JobListingOrderedItemWrapper>
+              ))}
+            </ol>
+          </div>
+        </JobListingDetail>
+      </JobListingWrapper>
+      <JobListingFooter>
+        <div className="footer-container">
+          hello{" "}
           <Link href={`/company/${id}`}>
             <button css={[ButtonBase, PrimaryButtonColors]}>Apply Now</button>
           </Link>
         </div>
-        <div className="bottom-container">
-          <p>{description}</p>
-          <h2>Requirements</h2>
-          <p>{reqContent}</p>
-          <ul>
-            {reqItems.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
-          <h2>What Will You Do</h2>
-          <p>{roleContent}</p>
-          <ol>
-            {roleItems.map((item, i) => (
-              <JobListingOrderedItemWrapper key={i} idx={i + 1}>
-                {item}
-              </JobListingOrderedItemWrapper>
-            ))}
-          </ol>
-        </div>
-      </JobListingDetail>
-    </JobListingWrapper>
+      </JobListingFooter>
+    </>
   );
 };
 
 const JobListingWrapper = styled.section`
   transform: translateY(-30px);
   width: 738px;
+  margin-bottom: 80px;
 `;
 
 const JobListingDetail = styled.article`
@@ -140,6 +152,22 @@ const JobListingOrderedItemWrapper = styled.li`
     content: "${(props) => props.idx}.";
     font-size: 14px;
     line-height: 1.6;
+  }
+`;
+
+const JobListingFooter = styled.footer`
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  bottom: 0;
+  background-color: var(--color-bg-primary);
+  .footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 738px;
+    padding: 20px 0;
   }
 `;
 

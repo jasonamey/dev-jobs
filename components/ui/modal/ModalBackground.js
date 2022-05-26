@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
+import {device} from "../../../styles/devices";
 
 const ModalBackground = ({hideModal}) => {
   return <ModalBackgroundWrapper onClick={hideModal} />;
@@ -14,6 +15,9 @@ const ModalBackgroundWrapper = styled.div`
   height: 100%;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.5);
+  @media screen and ${device.tablet} {
+    display: none;
+  }
 `;
 
 export default ModalBackground;
