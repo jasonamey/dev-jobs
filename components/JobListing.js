@@ -67,7 +67,10 @@ const JobListing = ({job}) => {
       </JobListingWrapper>
       <JobListingFooter>
         <div className="footer-container">
-          hello{" "}
+          <div className="text-container">
+            <h2>{position}</h2>
+            <h4>So Digital Inc.</h4>
+          </div>
           <Link href={`/company/${id}`}>
             <button css={[ButtonBase, PrimaryButtonColors]}>Apply Now</button>
           </Link>
@@ -168,6 +171,16 @@ const JobListingFooter = styled.footer`
     align-items: center;
     width: 738px;
     padding: 20px 0;
+  }
+  h2 {
+    font-size: 21px;
+    font-weight: 600;
+    color: var(--color-job-title);
+    margin-bottom: 8px;
+  }
+  h4 {
+    font-size: 16px;
+    color: var(--color-text-primary);
   }
 `;
 
