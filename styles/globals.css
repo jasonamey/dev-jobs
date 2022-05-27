@@ -138,6 +138,10 @@ table {
   --border-radius: 6px;
   --button-width: 126px;
   --transition: 0.5s;
+  --job-listing-phone-width: 90%;
+  --job-listing-tablet-width: 80%;
+  --job-listing-desktop-width-max: 738px;
+  --job-listing-desktop-width-min: 60%;
 }
 
 * {

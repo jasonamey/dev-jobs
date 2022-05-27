@@ -2,9 +2,18 @@ import React from "react";
 import styled from "@emotion/styled";
 import Image from "next/image";
 import Link from "next/link";
+import LogoBadge from "./LogoBadge";
+import {device} from "../styles/devices";
 const JobHeading = ({logo, logoBackground, company, id}) => {
   return (
     <JobHeadingWrapper>
+      <div className="phone-container">
+        <LogoBadge
+          logo={logo}
+          logoBackground={logoBackground}
+          company={company}
+        />
+      </div>
       <div className="logo-container" style={{backgroundColor: logoBackground}}>
         <div
           className="image-container"
@@ -32,16 +41,23 @@ const JobHeading = ({logo, logoBackground, company, id}) => {
 };
 
 const JobHeadingWrapper = styled.header`
-  --padding-header-block: 40px;
-  --padding-header-inline: 50px;
   background-color: var(--color-bg-primary);
   margin-bottom: 30px;
   border-radius: var(--border-radius);
   overflow: hidden;
   display: flex;
+  .phone-container {
+    display: block;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-22px);
+    @media screen and ${device.tablet} {
+      display: none;
+    }
+  }
   .logo-container {
     width: 140px;
-    display: flex;
+    display: none;
     justify-content: center;
     align-items: center;
     .image-container {
@@ -49,23 +65,31 @@ const JobHeadingWrapper = styled.header`
       width: 80px;
       height: 80px;
     }
+    @media screen and ${device.tablet} {
+      display: flex;
+    }
   }
   .info-container {
     flex: 1;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: var(--padding-header-block) var(--padding-header-inline);
-    h2 {
-      font-weight: 600;
-      font-size: 22px;
-      color: var(--color-job-title);
-      margin-bottom: 16px;
+    flex-direction: column;
+    padding: 40px 0 30px 0;
+    text-align: center;
+    .text-container {
+      margin-bottom: 20px;
+      h2 {
+        font-weight: 600;
+        font-size: 22px;
+        color: var(--color-job-title);
+        margin-bottom: 16px;
+      }
     }
     button {
       border: none;
       cursor: pointer;
-      background-color: var(--color-accent-tertiary);
+      background-color: var(--color-bg-secondary);
       padding: 14px 0;
       width: 146px;
       color: var(--color-accent-primary);
@@ -78,6 +102,16 @@ const JobHeadingWrapper = styled.header`
         background-color: var(--color-accent-primary);
         color: #fff;
       }
+    }
+  }
+  @media screen and ${device.tablet} {
+    .info-container {
+      padding: 34px 50px;
+      flex-direction: row;
+      text-align: left;
+    }
+    .text-container {
+      margin-bottom: 0;
     }
   }
 `;

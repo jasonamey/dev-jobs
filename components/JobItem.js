@@ -2,6 +2,7 @@ import React from "react";
 import Image from "next/image";
 import styled from "@emotion/styled";
 import Link from "next/link";
+import LogoBadge from "./LogoBadge";
 
 const JobItem = ({
   company,
@@ -16,7 +17,12 @@ const JobItem = ({
 }) => {
   return (
     <JobItemWrapper isViewable={isViewable}>
-      <div className="logo-container" style={{backgroundColor: logoBackground}}>
+      <LogoBadge
+        logoBackground={logoBackground}
+        company={company}
+        logo={logo}
+      />
+      {/* <div className="logo-container" style={{backgroundColor: logoBackground}}>
         <div
           className="image-container"
           style={{backgroundColor: logoBackground}}
@@ -28,7 +34,7 @@ const JobItem = ({
             alt={`${company} logo`}
           />
         </div>
-      </div>
+      </div> */}
       <div className="info-container">
         <h3 className="row-1-h3">
           {postedAt} {contract}
@@ -61,7 +67,6 @@ const JobItemWrapper = styled.article`
     width: 54px;
     height: 54px;
     border-radius: 15px;
-
     .image-container {
       position: relative;
       display: flex;

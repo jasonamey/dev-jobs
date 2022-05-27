@@ -1,9 +1,9 @@
 import React from "react";
 import JobHeading from "./JobHeading";
 import Link from "next/link";
-import Button from "./ui/Button";
 import styled from "@emotion/styled";
 import {ButtonBase, PrimaryButtonColors} from "../styles/mixins";
+import {device} from "../styles/devices";
 
 const JobListing = ({job}) => {
   const {
@@ -82,8 +82,16 @@ const JobListing = ({job}) => {
 
 const JobListingWrapper = styled.section`
   transform: translateY(-30px);
-  width: 738px;
+  width: var(--job-listing-phone-width);
+
   margin-bottom: 80px;
+  @media screen and ${device.tablet} {
+    width: var(--job-listing-tablet-width);
+  }
+  @media screen and ${device.laptop} {
+    width: var(--job-listing-desktop-width-min);
+    max-width: var(--job-listing-desktop-width-max);
+  }
 `;
 
 const JobListingDetail = styled.article`
@@ -108,6 +116,8 @@ const JobListingDetail = styled.article`
         color: var(--color-accent-primary);
         font-size: 14px;
       }
+    }
+    @media screen and ${device.tablet} {
     }
   }
   .bottom-container {
@@ -169,8 +179,17 @@ const JobListingFooter = styled.footer`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 738px;
+    width: var(--job-listing-width-min);
+    max-width: var(--job-listing-width-max);
     padding: 20px 0;
+    width: var(--job-listing-phone-width);
+    @media screen and ${device.tablet} {
+      width: var(--job-listing-tablet-width);
+    }
+    @media screen and ${device.laptop} {
+      width: var(--job-listing-desktop-width-min);
+      max-width: var(--job-listing-desktop-width-max);
+    }
   }
   h2 {
     font-size: 21px;
