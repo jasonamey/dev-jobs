@@ -11,7 +11,7 @@ const ModalBodyWrapper = styled.div`
   left: 50%;
   transform: translateX(-50%);
   z-index: 1000;
-  background-color: white;
+  background-color: var(--color-bg-secondary);
   width: 90%;
   border-radius: var(--border-radius);
   div {
@@ -19,6 +19,9 @@ const ModalBodyWrapper = styled.div`
     &.top {
       border-bottom: 1px solid hsla(212, 23%, 69%, 0.2);
     }
+  }
+  input {
+    background-color: var(--color-bg-secondary);
   }
   @media screen and ${device.tablet} {
     display: none;

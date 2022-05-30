@@ -2,6 +2,7 @@ import React from "react";
 import styled from "@emotion/styled";
 import dynamic from "next/dynamic";
 import Link from "next/link";
+import {device} from "../styles/devices";
 
 const DynamicThemeToggle = dynamic(() => import("./ThemeToggle"), {
   ssr: false,
@@ -23,7 +24,7 @@ const Header = () => {
 const HeaderWrapper = styled.header`
   width: 100%;
   height: 160px;
-  background-image: url("/bg-pattern-header.svg");
+  background-image: url("/bg-pattern-header-mobile.svg");
   background-color: var(--color-bg-secondary);
   background-size: cover;
   padding-top: 42px;
@@ -41,6 +42,12 @@ const HeaderWrapper = styled.header`
       font-size: 32px;
       cursor: pointer;
     }
+  }
+  @media screen and ${device.tablet} {
+    background-image: url("/bg-pattern-header-tablet.svg");
+  }
+  @media screen and ${device.laptop} {
+    background-image: url("/bg-pattern-header.svg");
   }
 `;
 
