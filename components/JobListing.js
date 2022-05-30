@@ -101,14 +101,14 @@ const JobListingDetail = styled.article`
   border-radius: var(--border-radius);
   .top-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 52px;
+    flex-direction: column;
+    margin-bottom: 35px;
     .job-title-container {
+      margin-bottom: 40px;
       h1 {
         color: var(--color-job-title);
         font-weight: 600;
-        font-size: 26px;
+        font-size: 21px;
         margin: 12px 0 16px 0;
       }
       h4 {
@@ -118,6 +118,16 @@ const JobListingDetail = styled.article`
       }
     }
     @media screen and ${device.tablet} {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: row;
+      .job-title-container {
+        margin-bottom: 0;
+        h1 {
+          font-size: 26px;
+        }
+      }
     }
   }
   .bottom-container {
@@ -172,19 +182,28 @@ const JobListingFooter = styled.footer`
   position: absolute;
   width: 100%;
   display: flex;
+
   justify-content: center;
   bottom: 0;
   background-color: var(--color-bg-primary);
   .footer-container {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: var(--job-listing-width-min);
+    flex-direction: column;
     max-width: var(--job-listing-width-max);
     padding: 20px 0;
     width: var(--job-listing-phone-width);
+    .text-container {
+      display: none;
+    }
     @media screen and ${device.tablet} {
       width: var(--job-listing-tablet-width);
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+      .text-container {
+        display: block;
+      }
     }
     @media screen and ${device.laptop} {
       width: var(--job-listing-desktop-width-min);
