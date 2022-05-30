@@ -38,9 +38,6 @@ export const FieldWrapperStyle = css`
   justify-content: space-between;
   width: 100%;
   padding: 28px 0;
-  &:nth-child(2) {
-    backround: green;
-  }
   @media screen and ${device.tablet} {
     padding: 28px 15px;
     border-right: 1px solid var(--color-text-primary);

@@ -95,7 +95,7 @@ const JobListingWrapper = styled.section`
 `;
 
 const JobListingDetail = styled.article`
-  padding: 50px;
+  padding: 22px;
   width: 100%;
   background-color: var(--color-bg-primary);
   border-radius: var(--border-radius);
@@ -167,6 +167,9 @@ const JobListingDetail = styled.article`
       font-size: 20px;
       line-height: 1;
     }
+  }
+  @media screen and ${device.tablet} {
+    padding: 50px;
   }
 `;
 
