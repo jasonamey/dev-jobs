@@ -1,34 +1,59 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Frontend Mentor - Devjobs Web App
 
-## Getting Started
+This is a solution to the [Devjobs Web App](https://www.frontendmentor.io/challenges/devjobs-web-app-HuvC_LP4l). Frontend Mentor challenges help you improve your coding skills by building realistic projects.
 
-First, run the development server:
+## Table of contents
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+  - [Built with](#built-with)
+- [Author](#author)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Overview
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
+### The challenge
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
+Your users should be able to:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+- View the optimal layout for each page depending on their device's screen size
+- See hover states for all interactive elements throughout the site
+- Be able to filter jobs on the index page by title, location, and whether a job is for a full-time position
+- Be able to click a job from the index page so that they can read more information and apply for the job
+- Bonus: Have the correct color scheme chosen for them based on their computer preferences. Hint: Research prefers-color-scheme in CSS.
+- Bonus: Build this project as a full-stack application
 
-## Learn More
+### Screenshot
 
-To learn more about Next.js, take a look at the following resources:
+Desktop :
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+<img src="https://firebasestorage.googleapis.com/v0/b/project-data-ja.appspot.com/o/devjobs-app%2Fscreenshots%2Fresized-1.png?alt=media&token=3b78a923-1501-4a2c-bfc6-a90242806714"  width="80%">
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+<img src="https://firebasestorage.googleapis.com/v0/b/project-data-ja.appspot.com/o/devjobs-app%2Fscreenshots%2Fresize-2.png?alt=media&token=f2aca12b-35a8-4a1d-b5a7-114e4191bb5b"  width="80%">
 
-## Deploy on Vercel
+<img src="https://firebasestorage.googleapis.com/v0/b/project-data-ja.appspot.com/o/devjobs-app%2Fscreenshots%2Fresize-4.png?alt=media&token=11277dec-cc41-4de4-add6-14ddcec36e62"  width="80%">
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Tablet :
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+<img src="https://firebasestorage.googleapis.com/v0/b/project-data-ja.appspot.com/o/devjobs-app%2Fscreenshots%2Fresize-3.png?alt=media&token=affb5337-3834-4c85-bc86-1702cfe42e01"  width="50%">
+
+Mobile :
+
+<img src="https://firebasestorage.googleapis.com/v0/b/project-data-ja.appspot.com/o/devjobs-app%2Fscreenshots%2Fresize-7.png?alt=media&token=a21bb412-2820-4934-9393-0d2ab7a9df72"  width="30%">
+
+### Links
+
+- Solution URL: [Github](https://github.com/jasonamey/dev-jobs)
+- Live Site URL: [Hosted by Vercel](https://dev-jobs-phi.vercel.app/)
+
+## Built With
+
+- NextJs
+- MongoDB Atlas
+- @emotion/css
+
+## Author
+
+- Portfolio Website - [Jason Amey](https://www.jasonamey.com)
+- Frontend Mentor Profile Page - [@jasonamey](https://www.frontendmentor.io/profile/jasonamey)

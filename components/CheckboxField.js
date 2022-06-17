@@ -1,8 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Image from "next/image";
-import {FieldWrapperStyle, PrimaryButtonColors} from "../styles/mixins";
-import searchIcon from "../public/icon-search-white.svg";
+import {FieldWrapperStyle} from "../styles/mixins";
 import {device} from "../styles/devices";
 
 const CheckboxField = ({id, checkedValue, setCheckedValue, textLabel}) => {
@@ -24,27 +22,11 @@ const CheckboxField = ({id, checkedValue, setCheckedValue, textLabel}) => {
   );
 };
 
-{
-  /* {jobsFoundBySearch === numOfTotalJobs ? "Search" : "Reset"} */
-}
-
-{
-  /* <button
-type="submit"
-css={[PrimaryButtonColors]}
-onClick={() => console.log("hello submit")}
->
-<span className="search-btn-txt">Search</span>
-<span className="search-btn-icon">
-  <Image src={searchIcon} alt="search-icon" height={20} width={20} />
-</span>
-</button> */
-}
-
 const CheckBoxWrapper = styled.div`
   flex: 1;
   display: flex;
   width: 100%;
+
   justify-content: space-between;
   align-items: center;
 

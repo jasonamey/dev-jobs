@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 import styled from "@emotion/styled";
 import Link from "next/link";
 import LogoBadge from "./LogoBadge";
@@ -22,19 +21,7 @@ const JobItem = ({
         company={company}
         logo={logo}
       />
-      {/* <div className="logo-container" style={{backgroundColor: logoBackground}}>
-        <div
-          className="image-container"
-          style={{backgroundColor: logoBackground}}
-        >
-          <Image
-            src={logo}
-            layout="fill"
-            objectFit="contain"
-            alt={`${company} logo`}
-          />
-        </div>
-      </div> */}
+
       <div className="info-container">
         <h3 className="row-1-h3">
           {postedAt} {contract}
